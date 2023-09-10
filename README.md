@@ -1,23 +1,20 @@
 # Versão atualizada do novel_scraping
+# Melhorias básicas em comparação com a versão anterior:
+- Organização por Módulos: O código foi reestruturado em módulos para uma melhor organização.
+- Uso Eficiente do Selenium: Agora, o Selenium é utilizado apenas para obter o número de capítulos e todos os títulos.
+    - Antes, a coleta de dados era realizada inteiramente pelo Selenium, o que era ineficiente e demorava cerca de 10 minutos, especialmente em novels extensas. Além disso, era restrito a um conjunto específico de novels.
 
-# Melhorias básicas comparado ao antigo:
+# Melhorias Notáveis:
+- Formatação de Títulos: A partir dos títulos obtidos, o código formata os títulos para as URLs dos capítulos no padrão do site ReadNovel, tornando-o compatível com qualquer novel.
+- Requisições Assíncronas: As bibliotecas asyncio e aiohttp são utilizadas para realizar requisições assíncronas do conteúdo textual de cada capítulo a partir das URLs obtidas.
+    - Isso resultou em uma redução significativa no tempo de execução do código, de aproximadamente 15 minutos para cerca de 37 segundos, para 1619 requisições. Para efeito de comparação, o código foi testado em quatro novels diferentes, que levaram aproximadamente 170 segundos para concluir a raspagem de dados.
+    - Vale ressaltar que a utilização da biblioteca requests teria sido tão ineficiente quanto o uso exclusivo do Selenium, de acordo com os testes realizados.
+- Utilização do Beautiful Soup: O Beautiful Soup é usado para fazer a análise do HTML e extrair os dados necessários.
+- Formatação de Dados: Os textos são formatados para extrair informações como quantidade de palavras, caracteres, caracteres sem espaços, caracteres sem pontuações e ambos.
+    - A função sub da biblioteca re é utilizada para formatar os textos de forma eficiente e concisa.
+    - Dicionários foram usados em vez de listas para criar uma estrutura de dados mais legível.
+    - O código calcula a soma total de cada aspecto e a quantidade média de cada aspecto por capítulo.
+- Geração de Arquivos JSON: Arquivos JSON são criados para armazenar todos os dados de forma organizada.
+- Precisão dos Dados: A precisão dos dados coletados aumentou de 97% para 100% em comparação com a versão anterior.
 
-- Código separado por módulos (mais organizado)
-- Usa o selenium somente para pegar o número de capítulos e todos os títulos.
-    - Antigamente usava o selenium para fazer toda a coleta de dados, o que era ineficiente, pois levava cerca de 10 minutos, considerando que as novels eram deveras grandes. Além disso, não era flexível, só funcionava nas novels que escolhi.
-
-# Melhorias notáveis:
-
-- A partir dos títulos adquiridos, formata todos os títulos para a URL de cada capítulo no padrão aparente do site readnovel (permite que o código funcione em qualquer novel).
-- Uso das libs asyncio e aiohttp para fazer requisições assíncronas do conteúdo textual de cada capítulo a partir das URLs adquiridas.
-    - Velocidade de execução total do código foi de 15 minutos ou mais para uns 37 segundos em 1619 requisições (funções assíncronas são realmente impressionantes). Para efeito de comparação, usei 4 novels diferentes, que juntas deram aproximadamente 170 segundos para finalizar a raspagem de dados.
-    - Nota: usar a lib requests seria tão ineficiente quanto usar somente o selenium, de acordo com os testes.
-- Usei Beautiful Soup para raspar os dados selecionados do HTML.
-- Formata os textos para adquirir os seguintes dados: quantidade de palavras, caracteres, caracteres sem espaços, caracteres sem pontuações, e sem ambos.
-    - Usei a função sub da lib re para formatar os textos de forma mais eficiente e com menos código.
-    - Usei dicionários invés de listas para criar uma estrutura de dados mais agradável.
-    - Adquire a soma total de todos os aspectos e calcula a quantidade média de cada por capítulo.
-- Cria arquivos json com todos os dados organizados.
-- A precisão dos dados adquiridos aumentou de 97% para 100% comparado a anteriormente.
-
-Esse projeto demorou bem mais tempo do que o primeiro, especialmente porque eu estava aprendendo enquanto fazia, mas foi legal ver o resultado final.
+Esse projeto demorou bem mais tempo do que o primeiro, principalmente porque eu estava aprendendo enquanto fazia, no entanto gostei do resultado final.
