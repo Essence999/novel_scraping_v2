@@ -4,7 +4,7 @@
 
 - Código separado por módulos (mais organizado)
 - Usa o selenium somente para pegar o número de capítulos e todos os títulos.
-    - Antigamente usava o selenium para fazer o scraping inteiro, o que era ineficiente, pois levava cerca de 10 minutos, considerando que as novels eram deveras grandes. Além disso, não era flexível, só funcionava nas novels que escolhi.
+    - Antigamente usava o selenium para fazer toda a coleta de dados, o que era ineficiente, pois levava cerca de 10 minutos, considerando que as novels eram deveras grandes. Além disso, não era flexível, só funcionava nas novels que escolhi.
 
 # Melhorias notáveis:
 
