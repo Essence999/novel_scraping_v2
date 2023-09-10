@@ -10,8 +10,9 @@
 
 - A partir dos títulos adquiridos, formata todos os títulos para a URL de cada capítulo no padrão aparente do site readnovel (permite que o código funcione em qualquer novel).
 - Uso das libs asyncio e aiohttp para fazer requisições assíncronas do conteúdo textual de cada capítulo a partir das URLs adquiridas.
-    - Velocidade de execução total do código foi de cerca de 10 minutos para uns 37 segundos em 1619 requisições (funções assíncronas são realmente impressionantes).
+    - Velocidade de execução total do código foi de 15 minutos ou mais para uns 37 segundos em 1619 requisições (funções assíncronas são realmente impressionantes). Para efeito de comparação, usei 4 novels diferentes, que juntas deram aproximadamente 170 segundos para finalizar a raspagem de dados.
     - Nota: usar a lib requests seria tão ineficiente quanto usar somente o selenium, de acordo com os testes.
+- Usei Beautiful Soup para raspar os dados selecionados do HTML.
 - Formata os textos para adquirir os seguintes dados: quantidade de palavras, caracteres, caracteres sem espaços, caracteres sem pontuações, e sem ambos.
     - Usei a função sub da lib re para formatar os textos de forma mais eficiente e com menos código.
     - Usei dicionários invés de listas para criar uma estrutura de dados mais agradável.
