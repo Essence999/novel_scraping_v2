@@ -5,7 +5,7 @@
     - Antes, a coleta de dados era realizada inteiramente pelo Selenium, o que era ineficiente e demorava cerca de 10 minutos, especialmente em novels extensas. Além disso, era restrito a um conjunto específico de novels.
 
 # Melhorias Notáveis:
-- Formatação de Títulos: A partir dos títulos obtidos, o código formata os títulos para as URLs dos capítulos no padrão do site ReadNovel, tornando-o compatível com qualquer novel.
+- Formatação de Títulos: A partir dos títulos obtidos, o código formata os títulos para as URLs dos capítulos no padrão do site ReadNovelFull, tornando-o compatível com qualquer novel.
 - Requisições Assíncronas: As bibliotecas asyncio e aiohttp são utilizadas para realizar requisições assíncronas do conteúdo textual de cada capítulo a partir das URLs obtidas.
     - Isso resultou em uma redução significativa no tempo de execução do código, de aproximadamente 15 minutos para cerca de 37 segundos, para 1619 requisições. Para efeito de comparação, o código foi testado em quatro novels diferentes, que levaram aproximadamente 170 segundos para concluir a raspagem de dados.
     - Vale ressaltar que a utilização da biblioteca requests teria sido tão ineficiente quanto o uso exclusivo do Selenium, de acordo com os testes realizados.
